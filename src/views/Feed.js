@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './styles/feed.css';
+
+import Navbar from '../components/Navbar';
 
 import ApiRequest from '../util/ApiRequest';
 
@@ -9,22 +10,34 @@ class Feed extends Component {
       window.location.pathname = '/login';
       return;
     }
+
     return (
-      <h1>Hello {window.localStorage.getItem('token')}</h1>
+      <div>
+        <Navbar />
+        <h1>Hello {this.state ? this.state.displayName : ''}</h1>
+      </div>
     );
   }
 
   componentDidMount() {
     let parseResponse = data => {
-      
+
     };
 
     ApiRequest.feed().then(response => {
 
-    })
+    });
+
+    ApiRequest.me().then(response => {
+      this.setState({
+        displayName: response.data.data.displayName
+      })
+    });
   }
 
-
+  componentWillMount() {
+    require('./styles/feed.css');
+  }
 }
 
 export default Feed;

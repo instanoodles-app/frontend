@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import './styles/login.css';
 
 import ApiRequest from '../util/ApiRequest';
 
 class Login extends Component {
   render() {
+    if (window.localStorage.getItem('token')) {
+      window.location.pathname = '/feed';
+      return;
+    }
+
     return (
       <div className="container">
         <div className="logo">
@@ -29,6 +33,10 @@ class Login extends Component {
     console.log(this.state.username);
   }
 
+  componentDidMount() {
+    require('./styles/login.css');
+  }
+
   doLogin(e) {
     e.preventDefault();
     ApiRequest.login(this.state.username, this.state.password).then(result => {
@@ -41,8 +49,8 @@ class Login extends Component {
     }).catch(e => {
       if (e.response) {
         if (e.response.data.code === 404) {
-          this.setState({error: (<div className="notification is-danger">Invalid username or password</div>)});
-        } 
+          this.setState({ error: (<div className="notification is-danger">Invalid username or password</div>) });
+        }
       }
       console.log(e);
     });

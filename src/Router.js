@@ -15,9 +15,13 @@ import Feed from './views/Feed';
 class App extends Component {
   render() {
     let token = window.localStorage.getItem('token');
-    if (token) {
-      window.location.pathname = '/feed';
-    } else if (!token && window.location.pathname !== '/login') window.location.pathname = '/login';
+    if (window.location.pathname === '/') {
+      if (token) {
+        window.location.pathname = '/feed';
+      } else if (!token) window.location.pathname = '/login';
+    }
+
+    
 
     return (
       <Router>

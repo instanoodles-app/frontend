@@ -12,6 +12,18 @@ module.exports.login = (username, password, callback) => {
 }
 
 module.exports.feed = () => {
-  return axios.get(base + '/posts/feed');
+  return axios.get(base + '/posts/feed', {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
+}
+
+module.exports.me = () => {
+  return axios.get(base + '/users/me', {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
 }
 
