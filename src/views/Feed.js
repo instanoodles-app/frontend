@@ -36,7 +36,7 @@ class Feed extends Component {
   }
 
   componentWillMount() {
-    require('./styles/feed.css');
+    require('./styles/main.css');
   }
 }
 
