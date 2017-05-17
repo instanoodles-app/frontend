@@ -1,0 +1,33 @@
+body, html {
+    background-color: #f9d861;
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    width: 40%;
+    height: 100%;
+    padding-top: 10%;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: 100%;
+        padding-top: 20%;
+        margin: 0 auto;
+    }
+}
+
+.logo {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.selection {
+    text-align: center;
+}
+
+.selection button {
+    margin: 20px;
+}
