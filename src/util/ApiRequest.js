@@ -27,3 +27,7 @@ module.exports.me = () => {
   });
 }
 
+module.exports.searchUsers = query => {
+  return axios.get(base + '/users/search?query=' + query); 
+}
+
