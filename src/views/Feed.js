@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Navbar from '../components/Navbar';
+import Post from '../components/Post';
 
 import ApiRequest from '../util/ApiRequest';
 
@@ -14,7 +15,9 @@ class Feed extends Component {
     return (
       <div>
         <Navbar />
-        <h1>Hello {this.state ? this.state.displayName : ''}</h1>
+        <section className="_jx516">
+          {this.state ? this.state.posts : null}
+        </section>
       </div>
     );
   }
@@ -25,7 +28,16 @@ class Feed extends Component {
     };
 
     ApiRequest.feed().then(response => {
-
+      var arr = [];
+      if (response.data.code === 200) {
+        let posts = response.data.data;
+        for (let post of posts) {
+          arr.push((<Post post={post} />));
+        }
+      }
+      this.setState({
+        posts: arr
+      });
     });
 
     ApiRequest.me().then(response => {

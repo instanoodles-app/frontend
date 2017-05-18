@@ -1,0 +1,230 @@
+#react-root article, div, nav {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    border: 0 solid #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+@media (min-width: 640px) {
+  ._gs7sp, ._h2d1o {
+      margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 640px) {
+  ._82fo9, ._cag6k, ._gs7sp, ._h2d1o, ._mbp5e, ._s6b3o {
+      background-color: #fff;
+      border: 1px solid #e6e6e6;
+      border-radius: 3px;
+      margin-left: -1px;
+      margin-right: -1px;
+  }
+}
+
+._55zw1 {
+    padding: 0;
+}
+
+._p1uf5 {
+    border-bottom: 1px solid #efefef;
+}
+
+._2ircu {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 60px;
+    padding: 16px;
+}
+
+._h33fs {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+._5lote {
+    background-color: #fafafa;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+._jozwt, ._jozwt:visited {
+    color: #262626;
+}
+
+._4zhc5 {
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 5px;
+    margin-left: -5px;
+}
+
+._22yr2 {
+    background-color: #efefef;
+    display: block;
+    width: 100%;
+}
+
+._jjzlb {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 100%;
+}
+
+._icyx7 {
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+}
+
+._icyx7, ._ovg3g {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+._ovg3g {
+    bottom: 0;
+    right: 0;
+}
+
+._icyx7, ._ovg3g {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+._knho6 {
+    margin-top: 4px;
+}
+
+._ghat4 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+._7gupx, ._tk4ba {
+    display: inline-block;
+}
+
+._tk4ba {
+    margin-left: -8px;
+}
+
+._1tv0k {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+._soakw {
+    display: block;
+    overflow: hidden;
+    text-indent: 110%;
+    white-space: nowrap;
+}
+
+.coreSpriteLikeHeartFull, .coreSpriteLikeHeartOpen, .coreSpriteLocation, .coreSpriteLock, .coreSpriteLoggedOutWordmark {
+    background-image: url(/img/sprite.png);
+    background-repeat: no-repeat;
+    background-position: 0 -322px;
+    height: 24px;
+    width: 24px;
+}
+
+.coreSpriteClose, .coreSpriteComment {
+    background-image: url(/img/sprite.png);
+    background-repeat: no-repeat;
+    background-position: -355px -94px;
+    height: 20px;
+    width: 20px;
+}
+
+.coreSpriteLikeHeartOpen, .coreSpriteLocation, .coreSpriteLock, .coreSpriteLoggedOutWordmark {
+    background-position: -26px -322px;
+}
+
+
+._hd0kr {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.coreSpriteComment, .coreSpriteDesktopNavActivity, .coreSpriteDesktopNavExplore {
+    background-position: -104px -322px;
+    height: 24px;
+    width: 24px;
+}
+
+._bv95x, ._rq3s7 {
+    margin-bottom: 4px;
+}
+
+._3fmp4 {
+    display: block;
+}
+
+._5l4x8, ._5l4x8:visited {
+    color: #999;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+._9gcwa {
+    font-size: 10px;
+    letter-spacing: .2px;
+}
+
+@media (min-width: 736px) {
+  ._379kp {
+      font-size: 15px;
+      line-height: 18px;
+  }
+}
+
+._mn52b {
+    padding: 0 16px;
+}
