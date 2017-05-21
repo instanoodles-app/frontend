@@ -31,3 +31,10 @@ module.exports.searchUsers = query => {
   return axios.get(base + '/users/search?query=' + query); 
 }
 
+module.exports.createUser = user => {
+  return axios.post(base + '/users', user);
+}
+
+module.exports.getUser = userId => {
+  return axios.get(base + '/users/' + userId);
+}

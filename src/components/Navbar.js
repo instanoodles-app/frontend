@@ -27,15 +27,7 @@ class Navbar extends Component {
                 <div className="_nhei4">
                   <div className="_pq5am">
                     <div className="_7smet">
-                      <a className="_soakw _vbtk2 coreSpriteDesktopNavExplore" href="/explore/"></a>
-                    </div>
-                    <div className="_7smet">
-                      <a href="#" className="_im3et _vbtk2 coreSpriteDesktopNavActivity">
-                        <span className="_soakw"></span>
-                      </a>
-                    </div>
-                    <div className="_7smet">
-                      <a className="_soakw _vbtk2 coreSpriteDesktopNavProfile" href="/profile/"></a>
+                      <a className="_soakw _vbtk2 coreSpriteDesktopNavProfile" href="/profile/me"></a>
                     </div>
                   </div>
                 </div>
@@ -60,8 +52,8 @@ class Navbar extends Component {
     ApiRequest.searchUsers(e.target.value).then(result => {
       let users = result.data.data;
       let htmlElems = [];
+      if (users.length === 0) return;
       for (let user of users) {
-        console.log(user);
         htmlElems.push((
           <a className="_k2vj6 _xk9bu" href={"/profile/" + user.id} >
             <div className="_oluat">

@@ -11,6 +11,7 @@ import {
  */
 import Login from './views/Login'
 import Feed from './views/Feed';
+import Profile from './views/Profile';
 
 class App extends Component {
   render() {
@@ -20,15 +21,13 @@ class App extends Component {
         window.location.pathname = '/feed';
       } else if (!token) window.location.pathname = '/login';
     }
-
     
-
     return (
       <Router>
         <div>
           <Route exact path="/login" component={Login}/>
           <Route path="/feed" component={Feed} />
-          <Route path="/profile/:id" /> 
+          <Route path="/profile/:id" component={Profile} /> 
         </div>
       </Router>
     );

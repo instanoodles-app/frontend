@@ -21,7 +21,7 @@ class Post extends Component {
           <div>
             <div className="_22yr2 _rx3v8">
               <div className="_jjzlb" style={{paddingBottom: '100%'}}>
-                <img className="_icyx7" id="pImage_0" src="https://static.ylilauta.org/files/y0/orig/k4ckvype/d8VQJ4n.png" />
+                <img className="_icyx7" id="pImage_0" src={this.props.post.imageUrl} />
               </div>
               <div className="_ovg3g">
               </div>
