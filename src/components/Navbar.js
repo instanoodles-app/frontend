@@ -54,6 +54,7 @@ class Navbar extends Component {
       let htmlElems = [];
       if (users.length === 0) return;
       for (let user of users) {
+        console.log(user);
         htmlElems.push((
           <a className="_k2vj6 _xk9bu" href={"/profile/" + user.id} >
             <div className="_oluat">

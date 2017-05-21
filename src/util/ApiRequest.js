@@ -28,7 +28,7 @@ module.exports.me = () => {
 }
 
 module.exports.searchUsers = query => {
-  return axios.get(base + '/users/search?query=' + query); 
+  return axios.get(base + '/users/search?query=' + query);
 }
 
 module.exports.createUser = user => {
@@ -37,4 +37,20 @@ module.exports.createUser = user => {
 
 module.exports.getUser = userId => {
   return axios.get(base + '/users/' + userId);
+}
+
+module.exports.getFollowing = userId => {
+  return axios.get(base + '/users/' + userId + '/following', {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
+}
+
+module.exports.getFollowers = userId => {
+  return axios.get(base + '/users/' + userId + '/followers', {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
 }
