@@ -48,8 +48,10 @@ class LoginForm extends Component {
       if (result.data.code === 200) {
         let token = result.data.data.value;
         window.localStorage.setItem('token', token);
-        // Redirect to /feed
-        window.location.pathname = '/feed';
+        ApiRequest.me().then(res => {
+          window.localStorage.setItem('username', res.data.data.username);
+          window.location.pathname = '/feed';
+        });        
       }
     }).catch(e => {
       if (e.response) {
