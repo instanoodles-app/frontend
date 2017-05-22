@@ -33,9 +33,10 @@ class Post extends Component {
             <a className="_tk4ba _1tv0k" href="#" role="button" aria-disabled="false">
               <span onClick={e => this.likeClicked(e)} className="_soakw coreSpriteLikeHeartOpen">Like</span>
             </a>
+            {(this.state && this.state.comments) ? '' : (
             <a className="_7gupx _hd0kr" href={`/post/${this.props.post.id}`} role="button">
               <span className="_soakw coreSpriteComment">Comment</span>
-            </a>
+            </a>)}
           </section>
           <section className="_hhrfo _orwu0">
             <div className="_kkf84 _oajsw">
@@ -57,11 +58,7 @@ class Post extends Component {
                 <time className="_9gcwa _379kp" dateTime={this.props.post.createdAt}>{this.getTimestamp(this.props.post.createdAt)}</time>
               </a>
             </div>
-            <section className="_saf51 _tbt2l">
-              <form className="_sk455" onSubmit={e => this.formSubmitted(e)}>
-                <input type="text" className="_2hc0g _qy55y" placeholder="Add a comment..." value={(this.state && this.state.newComment) ? this.state.newComment : ''} onChange={e => this.commentChanged(e)} />
-              </form>
-            </section>
+            {(this.state && this.state.comments) ? this.getCommentForm() : ''}
           </section>
         </div>
       </article>
@@ -69,6 +66,7 @@ class Post extends Component {
   }
 
   likeClicked(e) {
+    e.persist();
     let params = location.pathname.split('/');
     let post = params[params.length - 1];
     if (post == 'feed') {
@@ -139,6 +137,16 @@ class Post extends Component {
         comments
       });
     }
+  }
+
+  getCommentForm() {
+    return (
+      <section className="_saf51 _tbt2l">
+        <form className="_sk455" onSubmit={e => this.formSubmitted(e)}>
+          <input type="text" className="_2hc0g _qy55y" placeholder="Add a comment..." value={(this.state && this.state.newComment) ? this.state.newComment : ''} onChange={e => this.commentChanged(e)} />
+        </form>
+      </section>
+    );
   }
 }
 

@@ -26,8 +26,6 @@ class Login extends Component {
     require('./styles/login.css');
   }
 
-
-
   onSelection(s) {
     this.setState({ selection: s ? <SignUpForm /> :  (<LoginForm />)});
   }
