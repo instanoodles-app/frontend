@@ -54,3 +54,11 @@ module.exports.getFollowers = userId => {
     }
   });
 }
+
+module.exports.getPost = postId => {
+  return axios.get(base + '/posts/' + postId);
+}
+
+module.exports.getLikesForPost = postId => {
+  return axios.get(base + '/posts/' + postId + '/likes');
+}

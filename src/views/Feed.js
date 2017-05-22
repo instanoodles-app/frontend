@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Navbar from '../components/Navbar';
-import Post from '../components/Post';
+import PostElement from '../components/PostElement';
 
 import ApiRequest from '../util/ApiRequest';
 
@@ -32,7 +32,7 @@ class Feed extends Component {
       if (response.data.code === 200) {
         let posts = response.data.data;
         for (let post of posts) {
-          arr.push((<Post post={post} />));
+          arr.push((<PostElement post={post} />));
         }
       }
       this.setState({

@@ -12,6 +12,7 @@ import {
 import Login from './views/Login'
 import Feed from './views/Feed';
 import Profile from './views/Profile';
+import Post from './views/Post';
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
           <Route exact path="/login" component={Login}/>
           <Route path="/feed" component={Feed} />
           <Route path="/profile/:id" component={Profile} /> 
+          <Route path="/post/:id" component={Post} />
         </div>
       </Router>
     );
