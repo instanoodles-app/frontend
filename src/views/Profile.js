@@ -5,8 +5,6 @@ import ProfileHeader from '../components/ProfileHeader';
 
 import ApiRequest from '../util/ApiRequest';
 
-import '../views/styles/profile.css';
-
 class Profile extends Component {
   render() {
     return (
@@ -25,6 +23,7 @@ class Profile extends Component {
 
   componentWillMount() {
     require('./styles/main.css');
+    require('../views/styles/profile.css')
   }
 }
 

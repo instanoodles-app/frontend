@@ -21,13 +21,16 @@ class Profile extends Component {
     let params = location.pathname.split('/');
     let post = params[params.length - 1];
 
+    // Incredibly weak implementation 🤷
     ApiRequest.getPost(post).then(res => {
-      if (res.status === 200) {
-        res.data.data.author = res.data.data.user.username;
-        this.setState({
-          post: (<PostElement post={res.data.data} />)
+      ApiRequest.getLikesForPost(post).then(res1 => {
+        ApiRequest.getCommentsForPost(post).then(res2 => {
+          res.data.data.author = res.data.data.user.username;
+          this.setState({
+            post: (<PostElement post={res.data.data} likes={res1.data.data} comments={res2.data.data} />)
+          });
         });
-      }
+      });
     });
   }
 

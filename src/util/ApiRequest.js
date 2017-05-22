@@ -62,3 +62,31 @@ module.exports.getPost = postId => {
 module.exports.getLikesForPost = postId => {
   return axios.get(base + '/posts/' + postId + '/likes');
 }
+
+module.exports.getCommentsForPost = postId => {
+  return axios.get(base + '/posts/' + postId + '/comments');
+}
+
+module.exports.createComment = (postId, content) => {
+  return axios.put(base + '/posts/' + postId + '/comments', { content }, {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
+}
+
+module.exports.createLike = postId => {
+  return axios.put(base + '/posts/' + postId + '/likes', null, {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
+}
+
+module.exports.deleteLike = postId => {
+  return axios.delete(base + '/posts/' + postId + '/likes', {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
+}
