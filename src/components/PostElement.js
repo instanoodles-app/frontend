@@ -95,9 +95,17 @@ class Post extends Component {
     let post = params[params.length - 1];
     console.log(this.props);
     ApiRequest.createComment(post, this.state.newComment).then(res => {
-      if (res.status === 200)
-        window.location.reload();
-      else if (res.status === 401) window.location.pathname = '/login';
+      if (res.status === 200) {
+        let comments = this.state.comments;
+        comments.push((
+          <li className="_99ch8">
+            <a className="_4zhc5 notranslate _ebg8h" href={`/profile/${res.data.data.userId}`}>{localStorage.getItem('username') + ' '}</a>
+            <span><span><span>{res.data.data.content}</span></span></span>
+          </li>));
+        this.setState({
+          comments
+        });
+      } else if (res.status === 401) window.location.pathname = '/login';
     });
   }
 
