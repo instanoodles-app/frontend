@@ -1,0 +1,24 @@
+.newbutton {
+    background-color: #f9d861;
+    border-radius: 999em;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    line-height: 1;
+    font-size: 36px;
+    position: fixed;
+    cursor: pointer;
+    left: 90%;
+    top: 90%;
+}
+
+.newbutton span {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: -22px;
+    color: black;
+}

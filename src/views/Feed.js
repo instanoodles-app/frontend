@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Navbar from '../components/Navbar';
 import PostElement from '../components/PostElement';
+import NewButton from '../components/NewButton'
 
 import ApiRequest from '../util/ApiRequest';
 
@@ -18,6 +19,7 @@ class Feed extends Component {
         <section className="_jx516">
           {this.state ? this.state.posts : null}
         </section>
+        <NewButton />
       </div>
     );
   }
