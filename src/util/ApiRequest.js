@@ -36,7 +36,11 @@ module.exports.createUser = user => {
 }
 
 module.exports.getUser = userId => {
-  return axios.get(base + '/users/' + userId);
+  return axios.get(base + '/users/' + userId, {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
 }
 
 module.exports.getFollowing = userId => {
@@ -56,7 +60,11 @@ module.exports.getFollowers = userId => {
 }
 
 module.exports.getPost = postId => {
-  return axios.get(base + '/posts/' + postId);
+  return axios.get(base + '/posts/' + postId, {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
 }
 
 module.exports.getLikesForPost = postId => {

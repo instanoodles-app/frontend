@@ -30,8 +30,8 @@ class Post extends Component {
         </div>
         <div className="_mn52b">
           <section className="_ghat4 _knho6">
-            <a className="_tk4ba _1tv0k" href="#" role="button" aria-disabled="false">
-              <span onClick={e => this.likeClicked(e)} className="_soakw coreSpriteLikeHeartOpen">Like</span>
+            <a className="_tk4ba _1tv0k" role="button" aria-disabled="false">
+              <span onClick={e => this.likeClicked(e)} className={`_soakw ${!this.props.post.isLiked ? "coreSpriteLikeHeartOpen" : "coreSpriteLikeHeartFull"}`}>Like</span>
             </a>
             {(this.state && this.state.comments) ? '' : (
             <a className="_7gupx _hd0kr" href={`/post/${this.props.post.id}`} role="button">
