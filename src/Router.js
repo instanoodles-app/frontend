@@ -13,6 +13,7 @@ import Login from './views/Login'
 import Feed from './views/Feed';
 import Profile from './views/Profile';
 import Post from './views/Post';
+import Create from './views/Create';
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
           <Route path="/feed" component={Feed} />
           <Route path="/profile/:id" component={Profile} /> 
           <Route path="/post/:id" component={Post} />
+          <Route path="/create" component={Create} />
         </div>
       </Router>
     );

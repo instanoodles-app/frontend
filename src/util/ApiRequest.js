@@ -98,3 +98,11 @@ module.exports.deleteLike = postId => {
     }
   });
 }
+
+module.exports.createPost = post => {
+  return axios.post(base + '/posts', post, {
+    headers: {
+      authorization: window.localStorage.getItem('token')
+    }
+  });
+}
