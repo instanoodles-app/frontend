@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const base = 'http://localhost:8000'
+const base = 'http://10.112.17.225:8000'
 
 module.exports = {};
 
@@ -103,6 +103,14 @@ module.exports.createPost = post => {
   return axios.post(base + '/posts', post, {
     headers: {
       authorization: window.localStorage.getItem('token')
+    }
+  });
+}
+
+module.exports.getUserPosts = user => {
+  return axios.get(base + '/users/' + user + '/posts', {
+    headers: {
+      authenticate: window.localStorage.getItem('token')
     }
   });
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Navbar from '../components/Navbar';
 import ProfileHeader from '../components/ProfileHeader';
+import ProfilePosts from '../components/ProfilePosts';
 
 import ApiRequest from '../util/ApiRequest';
 
@@ -12,6 +13,7 @@ class Profile extends Component {
         <Navbar />
         <article className="_42elc _qfkcw">
           <ProfileHeader />
+          <ProfilePosts userId="3" />
         </article>
       </div>
     );

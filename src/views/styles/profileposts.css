@@ -1,0 +1,42 @@
+._t5r8b {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0%;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
+}
+
+._myci9 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+._8mlbc {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+._22yr2 {
+    background-color: #efefef;
+    display: block;
+    width: 100%;
+}
+
+._jjzlb {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 100%;
+}
+
+@media (min-width: 736px) {
+    ._myci9 {
+        margin-bottom: 28px;
+    }
+
+    ._t5r8b {
+        margin-right: 28px;
+    }
+}
