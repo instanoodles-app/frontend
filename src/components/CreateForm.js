@@ -9,7 +9,7 @@ class CreateForm extends Component {
     return (
       <form onSubmit={e => {this.onSubmit(e)}}>
         <h2 className="title is-3">Image</h2>
-        <Dropzone maxSize={10000000} accept="image/jpeg, image/png" onDrop={files => this.onDrop(files)}>
+        <Dropzone maxSize={20000000} accept="image/jpeg, image/png" onDrop={files => this.onDrop(files)}>
           <p>Try dropping some files here, or click to select files to upload.</p>
         </Dropzone>
         <br />
@@ -24,8 +24,9 @@ class CreateForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    if (!this.state.postImage)
+    if (!this.state.postImage) {
       return;
+    }
     let postBody = {
       textContent: this.state.textContent,
       image: {
@@ -35,10 +36,9 @@ class CreateForm extends Component {
       }
     };
     ApiRequest.createPost(postBody).then(res => {
-      if (res.status === 200) {
+      if (res.status === 200)
         window.location.pathname = '/feed';
-      }
-    });
+    }).catch(e => console.log(e));
   }
 
   onTextChanged(e) {

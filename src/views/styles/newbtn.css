@@ -8,8 +8,15 @@
     font-size: 36px;
     position: fixed;
     cursor: pointer;
-    left: 90%;
-    top: 90%;
+    right: 56px;
+    bottom: 56px;
+}
+
+@media(max-width: 763px) {
+    .newbutton {
+        right: 25px;
+        bottom: 25px;
+    }
 }
 
 .newbutton span {
