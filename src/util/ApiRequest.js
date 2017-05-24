@@ -110,7 +110,7 @@ module.exports.createPost = post => {
 module.exports.getUserPosts = user => {
   return axios.get(base + '/users/' + user + '/posts', {
     headers: {
-      authenticate: window.localStorage.getItem('token')
+      authorization: window.localStorage.getItem('token')
     }
   });
 }

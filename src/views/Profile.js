@@ -12,15 +12,29 @@ class Profile extends Component {
       <div>
         <Navbar />
         <article className="_42elc _qfkcw">
-          <ProfileHeader />
-          <ProfilePosts userId="3" />
+          <ProfileHeader user={this.state ? this.state.user : null} />
+          <ProfilePosts user={this.state ? this.state.user : null} />
         </article>
       </div>
     );
   }
 
   componentDidMount() {
-
+    let params = location.pathname.split('/');
+    let user = params[params.length - 1];
+    if (user === 'me') {
+      ApiRequest.me().then(me => {
+        this.setState({
+          user: me.data.data
+        });
+      });
+    } else {
+      ApiRequest.getUser(user).then(res => {
+        this.setState({
+          user: res.data.data
+        });
+      });
+    }
   }
 
   componentWillMount() {

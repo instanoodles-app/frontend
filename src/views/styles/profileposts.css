@@ -31,6 +31,15 @@
     padding-bottom: 100%;
 }
 
+._icyx7 {
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+}
+
 @media (min-width: 736px) {
     ._myci9 {
         margin-bottom: 28px;

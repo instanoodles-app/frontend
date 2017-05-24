@@ -8,7 +8,7 @@ class ProfileHeader extends Component {
       <header className="_5axto">
         <div className="_de9bg">
           <div className="_8mm5v">
-            <h1 className="_i572c">{this.state ? this.state.user.username : ''}</h1>
+            <h1 className="_i572c">{this.props.user ? this.props.user.username : ''}</h1>
           </div>
           <ul className="_9o0bc _bgr2x">
             <li className="_218yx">
@@ -25,9 +25,9 @@ class ProfileHeader extends Component {
             </li>
           </ul>
           <div className="_bugdy">
-            <h2 style={{marginRight: '10px'}} className="_79dar">{this.state ? this.state.user.displayName : ''}</h2>
+            <h2 style={{marginRight: '10px'}} className="_79dar">{this.props.user ? this.props.user.displayName : ''}</h2>
             <span>
-              <span>{this.state ? this.state.user.bioDescription : ''}</span>
+              <span>{this.props.user ? this.props.user.bioDescription : ''}</span>
             </span>
           </div>
         </div>
@@ -38,20 +38,6 @@ class ProfileHeader extends Component {
   componentDidMount() {
     let params = location.pathname.split('/');
     let user = params[params.length - 1];
-    if (user === 'me') {
-      ApiRequest.me().then(me => {
-        this.setState({
-          user: me.data.data
-        });
-      });
-    } else {
-      ApiRequest.getUser(user).then(res => {
-        this.setState({
-          user: res.data.data
-        });
-      });
-    }
-
     ApiRequest.getFollowers(user).then(res => {
       console.log(res);
       this.setState({
