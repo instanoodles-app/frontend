@@ -10,7 +10,7 @@ class CreateForm extends Component {
       <form onSubmit={e => {this.onSubmit(e)}}>
         <h2 className="title is-3">Image</h2>
         <Dropzone maxSize={20000000} accept="image/jpeg, image/png" onDrop={files => this.onDrop(files)}>
-          <p>Try dropping some files here, or click to select files to upload.</p>
+          <p className={(this.state && this.state.name) ? 'title is-3' : ''}>{(this.state && this.state.name) ? 'File uploaded!' : 'Try dropping some files here, or click to select files to upload.'}</p>
         </Dropzone>
         <br />
         <h2 className="title is-3">Text content</h2>

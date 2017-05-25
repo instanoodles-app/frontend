@@ -63,7 +63,7 @@ class ProfileHeader extends Component {
   }
 
   componentDidUpdate() {
-    if (this.props.user !== null && (!this.state || this.state.isFollowing == null)) {
+    if (this.props.user !== null && (this.state && this.state.isFollowing == null)) {
       console.log('hello');
       this.setState({
         isFollowing: this.props.user.isFollowing
