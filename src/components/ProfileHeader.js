@@ -60,13 +60,18 @@ class ProfileHeader extends Component {
         }
       });
     }
-  } 
+  }
 
-  componentDidMount() {
-    if (this.props.user)
+  componentDidUpdate() {
+    if (this.props.user !== null && (!this.state || this.state.isFollowing == null)) {
+      console.log('hello');
       this.setState({
         isFollowing: this.props.user.isFollowing
       });
+    }
+  }
+
+  componentDidMount() {
     let params = location.pathname.split('/');
     let user = params[params.length - 1];
     ApiRequest.getFollowers(user).then(res => {
