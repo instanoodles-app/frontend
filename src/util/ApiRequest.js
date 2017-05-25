@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const base = 'http://localhost:8000/api'
+const base = 'http://localhost/api'
 
 module.exports = {};
 
