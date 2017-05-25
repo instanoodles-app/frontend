@@ -60,7 +60,7 @@ class ProfileHeader extends Component {
         }
       });
     }
-  }
+  } 
 
   componentDidMount() {
     if (this.props.user)
