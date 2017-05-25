@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const base = 'http://localhost/api'
+const base = 'http://instanoodles.herokuapp.com/api'
 
 module.exports = {};
 
